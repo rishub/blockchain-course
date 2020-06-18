@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const rishubProfile = require('./images/rishub_profile.png');
+const jamesProfile = require('./images/james_profile.jpeg');
 
 const AuthorContainer = styled('div')`
     border-top: 1px solid #cdcfd2;
@@ -16,7 +17,7 @@ const AuthorImg = styled('img')`
 `
 
 const Author = ({ imgSrc, name, description }) => (
-    <div style={{ display: "flex", alignItems: "center" }}>
+    <div style={{ display: "flex", alignItems: "center", paddingBottom: "20px"  }}>
         <AuthorImg src={imgSrc} alt="" />
         <div style={{ marginLeft: "10px" }}>
             <p style={{ fontWeight: "bold" }}>{name}</p>
@@ -29,6 +30,7 @@ const Authors = () => {
   return (
         <AuthorContainer>
             <h4 style={{ marginBottom: "20px" }}>Written By</h4>
+            <Author imgSrc={jamesProfile} name="James Gan" description="Software Engineer II at PayPal" />
             <Author imgSrc={rishubProfile} name="Rishub Kumar" description="Solutions Engineer at Alchemyapi.io" />
         </AuthorContainer>
   )
