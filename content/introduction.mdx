@@ -15,19 +15,31 @@ Blockchain is a fairly recent technological innovation. Blockchain at its core i
 
 Blockchain essentially works by maintaining an ever-expanding linked list that is cryptographically verified to only allow for additional data elements, “blocks”, to be added to the tail-end of the data structure under certain conditions.
 
-In the original Bitcoin, these conditions were to  use a consensus protocol which dictated that each member of the network agreed to use the longest network with a valid cryptographic history, and to allow the first member to solve a cryptographic puzzle to add one block.
 
-<maybe link bitcoin paper here, other resources? maybe in an extra "resources" box?>
+<Resources 
+    text="In the original Bitcoin, these conditions were to  use a consensus protocol which dictated that each member of the network agreed to use the longest network with a valid cryptographic history, and to allow the first member to solve a cryptographic puzzle to add one block." 
+    resources={[
+        { link: "https://bitcoin.org/bitcoin.pdf", text: "Bitcoin whitepaper" },
+        { link: "https://www.coindesk.com/bitcoin-hash-functions-explained", text: "Bitcoin hash functions explained" }
+    ]}
+/>
 
 This system for adding on new blocks is commonly referred to as a “proof of work” system, in which users “mine” for new blocks. This data structure has primarily been used to create a reliable, limited supply of digital currencies known as “Cryptocurrency”.
 
-<could insert here a basic visualization or image (with citation) of POW>
+![POW](https://qph.fs.quoracdn.net/main-qimg-6a4b7c0672390d26a59e2eac8b4af107)
+<p style={{ textAlign: 'center' }}>Figure 1: Visualization of Proof of Work (Afreen 2018)</p>
+
 
 In 2014, a secondary use for Blockchain was created in the “Ethereum” white paper, which outlined a way to support a robust scripting language on top of a Blockchain network (Buterin, 2014).
 
-There is a substantial academic history to the “bitcoin” paper: it is built on top of numerous other papers ranging from a 1991 Blockchain which lacked a detailed consensus protocol and proof of work mechanism, to the cryptographic idea of “Merkle trees” (a cryptographic method to combine cryptographic signatures), to the 2005 “Bit gold” paper by Nick Szabo which included many of the same features as the Satoshi paper (Szabo, 2005).
-
-<maybe link these papers, have similar to the bitcoin paper but indicate "suggested" instead of "required" reading>
+<Resources 
+    title="Suggested Reading"
+    text="There is a substantial academic history to the “bitcoin” paper: it is built on top of numerous other papers ranging from a 1991 Blockchain which lacked a detailed consensus protocol and proof of work mechanism, to the cryptographic idea of “Merkle trees” (a cryptographic method to combine cryptographic signatures), to the 2005 “Bit gold” paper by Nick Szabo which included many of the same features as the Satoshi paper (Szabo, 2005)." 
+    resources={[
+        { link: "https://ethereum.org/whitepaper/", text: "Ethereum whitepaper" },
+        { link: "https://nakamotoinstitute.org/bit-gold/", text: "Bit Gold" }
+    ]}
+/>
 
 ### The Value of Learning Blockchain
 
@@ -35,7 +47,7 @@ The disruptive nature of Blockchain, and its potential is highlighted by the sta
 
 Quickly growing industries typically offer large numbers of opportunities, and Blockchain is no different: many studies estimate that there are roughly 10 jobs in Blockchain for every qualified candidate (Lindquist, 2020).
 
-<add something about Blockchain job salaries?>
+// <add something about Blockchain job salaries?>
 
 #### Critical Topics for Innovation and Research Within Blockchain
 
@@ -55,7 +67,7 @@ Blockchain innovations beyond the well-known use-cases of Cryptocurrency and Dec
 9. systems allowing users to make payments using Cryptocurrency for traditional payment systems;
 10. tokenization of real world assets, including but not limited to “Stablecoins” linked to real world currency (Poon & Dryja, 2016; Pongnumkul et al., 2017; Eyal et al., 2016; Zyskind et al., 2016; Adler et al., 2018; Nakamoto, 2008; Banach, 2019; Warren & Bandeali, 2017; Norta et al., 2015; del Castillo, 2020; Gan, 2019).
 
-<note: I published some of this in a Medium article already, and have slightly better formatting. Will fix formatting of this list later to be a bit more readable. HOWEVER, on this note, could we also get a separate specially formatted box at end for references? something that makes it stand out a bit less so that we can include it without making the page look too long. alternatively, we could make separate pages for each page, that include the references for that page, and link it at the bottom of the page. or do an expandable tool-tip type thing.>
+// <note: I published some of this in a Medium article already, and have slightly better formatting. Will fix formatting of this list later to be a bit more readable. HOWEVER, on this note, could we also get a separate specially formatted box at end for references? something that makes it stand out a bit less so that we can include it without making the page look too long. alternatively, we could make separate pages for each page, that include the references for that page, and link it at the bottom of the page. or do an expandable tool-tip type thing.>
 
 Additionally, there have been many Blockchain innovations creating alternative mechanisms for network governance (e.g. who updates and maintains the network) including co-op models such as RChain, board/mixed models such as Ethereum, BDFL models such as Python, full decentralization such as Bitcoin, on-chain/Proof of Stake voting such as Tezos, and private models such as Ripple/Libra (RChain Coop, 2017; Mann, 2019; Van Rossum, 2007; De Filippi & Loveluck, 2016; Goodman, 2014; Schwartz et al., 2014; Amaden et al., 2019).
 
@@ -63,3 +75,9 @@ Additionally, there have been many Blockchain innovations creating alternative m
 - link to bitcoin paper
 - link to eth paper
 - etc
+
+# References
+- https://www.quora.com/What-is-proof-of-work
+- https://bitcoin.org/bitcoin.pdf
+- https://www.coindesk.com/bitcoin-hash-functions-explained
+- https://nakamotoinstitute.org/bit-gold/

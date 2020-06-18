@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 import CodeBlock from './codeBlock';
 import AnchorTag from './anchor';
+import Resources from './resources';
 
 const StyledPre = styled('pre')`
   padding: 16px;
@@ -36,6 +37,7 @@ export default {
   ),
   code: CodeBlock,
   a: AnchorTag,
+  Resources: Resources,
   // TODO add `img`
   // TODO add `blockquote`
   // TODO add `ul`

@@ -5,6 +5,7 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 
 import { Layout, Link } from '$components';
 import NextPrevious from '../components/NextPrevious';
+import Authors from '../components/authors';
 import config from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
 
@@ -92,19 +93,22 @@ export default class MDXRuntimeTest extends Component {
         </Helmet>
         <div className={'titleWrapper'}>
           <StyledHeading>{mdx.fields.title}</StyledHeading>
-          <Edit className={'mobileView'}>
+          {/* <Edit className={'mobileView'}>
             {docsLocation && (
               <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
                 <img src={gitHub} alt={'Github logo'} /> Edit on GitHub
               </Link>
             )}
-          </Edit>
+            </Edit> */}
         </div>
         <StyledMainWrapper>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </StyledMainWrapper>
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
+        </div>
+        <div style={{ paddingBottom: "4rem"}}>
+          <Authors />
         </div>
       </Layout>
     );

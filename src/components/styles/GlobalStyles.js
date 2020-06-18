@@ -46,6 +46,9 @@ export const baseStyles = injectGlobal`
   .visibleMobileView {
     display: none !important;
   }
+  .visibleDesktopView {
+    display: block;
+  }
   .video-responsive {
     position: relative;
     padding-bottom: 56.2%;
@@ -738,6 +741,9 @@ export const baseStyles = injectGlobal`
     }
     .visibleMobileView {
       display: block !important;
+    }
+    .visibleDesktopView {
+      display: none;
     }
     .searchInput {
       color: #001934;
