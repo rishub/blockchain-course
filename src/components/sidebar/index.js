@@ -107,8 +107,8 @@ const SidebarLayout = ({ location }) => (
       }
     `}
     render={({ allMdx }) => {
-      console.log(allMdx.edges)
       const references = allMdx.edges.filter(edge => edge.node.fields.title.toLowerCase().includes("reference"));
+      
       const notReferences = allMdx.edges.filter(edge => !edge.node.fields.title.toLowerCase().includes("reference"));
 
       return (
