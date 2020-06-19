@@ -1,0 +1,103 @@
+---
+title: "Oracles: Getting Real World Data onto the Blockchain"
+metaTitle: "Introduction to Oracles"
+metaDescription: "This page covers various implementation of Blockchain Oracles which can be used to get real world information onto a Blockchain network."
+---
+
+### Note from the authors
+Just as a disclaimer, this page won’t be going into every project relating to oracles. There has been a lot of criticism of Chainlink specifically as Coinbase oracles have come out, and we consider it unproductive to introduce that sort of discussion into this course. Instead, we will cover the technical attributes of oracles so that it will be easier for others to make their own analysis of these systems.
+
+## Basic Blockchain Use Cases
+Blockchain is one of the hottest emerging technology in our world today. Boasting a (somewhere around - who knows with the volatility) $300 billion value of Cryptocurrency alone, the potential is clearly huge. Smart contracts have come around and exponentially expanded the possibilities for Blockchain technology, for use cases such as:
+
+1. Prediction Markets (betting)
+1. Futures (finance)
+1. Insurance (claims)
+1. Contracts (fulfillment)
+...
+
+However, each of these use cases leave one question unanswered: for any distributed application which wants to leverage real world data, such as a betting contract determining which sports team won a game, how does that application get that information on-chain in reliable, trusted manner?
+
+## Example: Insurance
+
+### Example: Insurance, Scenario 1
+
+Insurance plan via smart contract A covers:
+* Illness
+* Homicide
+* Accidents (e.g. dismemberment)
+Bob has plan B and loses an arm due to a skiing accident. The hospital rules it an accident and codes everything under covered services. The smart contract automatically accepts the claims as doctors insert a case classification code into their medical records system. In this scenario, the doctors are acting as an oracle by route of the medical records system.
+
+So, the smart contract works as planned.
+
+### Example: Insurance, Scenario 2
+
+Insurance plan via smart contract B covers:
+* Illness
+* Homicide
+* Accidents (e.g. dismemberment)
+Bob has plan A and loses an arm due to a skiing accident. The hospital rules it an accident and codes everything under covered services. His insurance denies the claim, and inputs the denial into their smart contract oracle. In this scenario, the insurance company is acting as an oracle.
+
+Wait - but I thought this was a smart contract? How is it possible for the smart contract to break its programmed code?
+
+In essence, there needs to be a "trigger" for the smart contract to perform actions. Oracles typically serve as those triggers when the smart contract requires real world data. Oracles can be someone with a private key for the smart contract, a webhook, a function call, decentralized voting, hardware plugged into the network, or various other solutions that we will discuss below. Each of these solutions have varying guarantees and attributes.
+
+## Oracles
+So, what is an oracle?
+
+Is an oracle RNG for bits? A source of data? Trusted authority? Verifiable authority on the state of the world or a certain claim?
+
+The answer is that practically anything that provides you some answer to the question "What is the state of x" is an oracle, for any given **x**. For example, if you want your smart contract to know what the weather is in Ithaca, New York each day, you could ask someone, check a weather website, call a weather API, or ask a computer hooked up to a thermometer and barometer. All of these solutions are oracles.
+
+The bigger question that we have here is: what makes a good oracle? To answer that, we need to define the requirements a bit more.
+
+### Why Use Oracles?
+Oracles are the backbone of Smart Contracts
+
+Without them, many smart contracts lose their guarantees
+
+#### Oracles: Example
+
+- 56,050,000$
+- Online gambling market
+
+- ~10,000,000 users
+- Roughly 1/20 adults will partake in some form of online gambling
+
+- 280%
+- Growth since 2009
+Source: https://www.statista.com/statistics/270728/market-volume-of-online-gaming-worldwide/
+
+// find citation for "!!!!!!!!" part, I think it's about 10%
+
+Blockchain gambling has begun to take a large chunk of that market: !!!!!!!!!!!!!!. It is typically nearly impossible to reliably determine and verify the results of many things that are used for gambling. For example, a game as simple as blackjack could be rigged in favor of the dealer to the tune of 1% gambling volume per day. With a smart contract, online gambling can be verifiably fair with transparency around any dealer biases present in games. However, many areas of online gambling are not as simple as blackjack. In sports betting, without an oracle, you cannot determine which team won a game; as a result, sports betting requires some sort of oracle. For a game like the Superbowl, these contracts may begin to yield tens or hundreds of millions of dollars, creating a massive financial incentive for oracles to behave dishonorably (i.e. maliciously).
+
+At this point, hopefully it is clear why we need oracles: without them, smart contracts are restricted to use cases that solely involve data that already exists on-chain, such as cryptocurrency. Once we have an oracle, we also need to consider if it is reliable enough for the use case at hand.
+
+// side thought: mention that while traditional online gambling companies are tied to an established legal entity that could be sued in case of illegitimate behavior, smart contracts for gambling can be somewhat anonymous.
+
+### Oracle Requirements
+Taking into consideration the why smart contracts and Blockchain networks might want to use oracles, here's how we would define these requirements:
+1. What degree of BFT does the oracle have?
+ a. What would it cost an actor to push specific data through that oracle?
+1. What is the cost of getting data?
+1. What is the delay in getting data?
+1.
+
+// need to add more here
+
+### Oracles: Hardware
+#### Oracles: SegWit
+### Oracles: Centralized/Trusted Actors
+### Oracles: Decentralized/Voting
+#### Oracles: Incentives and Punishments for Decentralized Oracles
+
+##### Resources for learning / topics that need to be covered
+- l
+
+# References
+- Town Crier: An Authenticated Data Feed for Smart Contracts. Zhang, Fan and Cecchetti, Ethan and Croman, Kyle and Juels, Ari and Shi, Elaine. iacr.
+- An introduction to oracles for asynchronous distributed systems. Achour Mostefaoui, Eric Mourgaya, Michel Raynal. FGCS.
+Emin Gun Sirer. CS6466 at Cornell, and in general.
+- Statistics on gambling from Statista.com - https://www.statista.com/statistics/270728/market-volume-of-online-gaming-worldwide/
+- Linh Vuu, who contributed to slides which some content from this page was taken
