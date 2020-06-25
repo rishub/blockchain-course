@@ -13,37 +13,9 @@ Bitcoin's original consensus protocol for maintaining a Blockchain leveraged pro
 Bitcoin originally targeted one block every 10 minutes, with a 1MB block size (how many transactions a single block can contain). This resulted in a throughput of roughly 5 transactions per second. In comparison, Visa processes around 1,700 transactions per second with capacity for tens of thousands per second. This highlights a shortcoming in Bitcoin: it can never substitute traditional financial systems without vastly improved scalability.
 
 *Bitcoin*
-
-- 5tx/sec
-- Throughput
-
-- 640 seconds
-- Latency
-
-- $0.50/tx
-- Fee (03/06/2020)
-
-*Lightning Network*
-
-- 1000tx/sec
-- Throughput
-
-- ~40 seconds
-- Latency
-
-- $<0.05/tx
-- Fee (03/06/2020)
-
-*Bitcoin-NG*
-
-- 100+tx/sec
-- Throughput
-
-- 10-40 seconds
-- Latency
-
-- $less than Bitcoin/tx
-- Fee (03/06/2020)
+- **Throughput**: 5 *tx/sec*
+- **Latency**: 640 *seconds*
+- **Fee**: $0.50*/tx (as of 03/06/2020)*
 
 ## Block Size/Block Creation Rate Debate
 Over the past few years there has been a massive debate around proposals to change the Bitcoin block size or block creation rates. We will avoid taking a position on this issue, but we want to highlight the factors at play.
@@ -56,8 +28,6 @@ Over the past few years there has been a massive debate around proposals to chan
   - This lowers overall network participation, making majority (or other notable percentages) of network participation easier to achieve, increasing the possibility of selfish mining, 51% attacks, and other security vulnerabilities
 As a result, there is a constant trade-off within the design of Bitcoin that requires optimizing between network participation and decentralization qualities.
 
-//Find scalability/measurement study from Eyal et al (or maybe it was EGS?) that looks into this as more detail, specifies what numbers work for best participation vs scalability
-
 In particular, this means that it is critical to consider the network speeds and technological capital available to potential members of the network across the world.
 
 ### Scalability Trade-offs
@@ -69,14 +39,26 @@ On the other hand, private, or permissioned blockchains in particular tend to ci
 
 For example, Ripple has one of the largest market caps, and has a permissioned network setup in which a few nodes run as “validator nodes”, which are more trusted and run the blockchain (add new blocks), while “stock servers” observe new blocks and help keep track of the blockchain. This allows them to ensure that the nodes which need to stay up-to-date with the blockchain can have certain requirements (namely bandwidth, geolocation, and being a trusted actor), enabling those nodes to process larger amounts of data (increase in throughput).
 
-#### Point of Interest: There are a TON of trade-offs in Blockchain
-One key thing we want to emphasize here is that many things in blockchain are trade-offs. These trade-offs exist throughout the field, and they are also one of the best ways to evaluate the strength of a given blockchain project
+### Measuring scalability
+In "Decentralization in Bitcoin and Ethereum Networks" Gencer et al. perform a measurement study to determine the level of decentralization of Bitcoin and Ethereum. In the figure below, we can see how they were able to use globally distributed computers to measure percentiles of bandwidth within Bitcoin and Ethereum.
 
-Note from James: whenever I read a new white-paper or listen to a new blockchain idea, I try to evaluate what technical, theoretical, and trust trade-offs are being made to enable whatever benefits are claimed: Bitcoin is generally a good reference point for those comparisons
+In other words, the slowest 10% of the Bitcoin network had under ~10Mbps bandwidth: requiring Bitcoin nodes to process above that much bandwidth would begin to push that 10% out of being able to participate freely in the network. This demonstrates the potential issues with increasing the Block size or frequency, and similar issues exist with many scalability solutions.
 
-##### Sidechains? Ripple? Etc? Can go more into detail on these. Providing raw research/word vomit for these here.
+![Statistics on distrubtion of provisioned bandwidth and the CDF. Gencer et al., 2017](images/eyal-fig2.png)
+<center>(Source: Gencer et al., 2017)</center>
+&nbsp;
 
-##### Sidechains
+This process of measurement is quite valuable: repeating some similar form of measurement or analysis for any Blockchain solution that claims to increase scalability is critical to understanding what trade-offs are being made to obtain increased scalability. Alternatively, this sort of measurement can verify the efficacy of innovations that might achieve scalability with fewer, or less significant, trade-offs.
+
+<Resources title="Suggested Reading" text="We strongly recommend reading the Gencer et al. paper. It goes into detail around various metrics of Blockchain networks to determine their decentralization, as well as related academic research in the field about mining power centralization within pools, resource requirements for participation, and more." resources={[ { link: "https://arxiv.org/abs/1801.03998", text: "Decentralization in Bitcoin and Ethereum Networks" } ]} />
+
+##### There are MANY trade-offs in Blockchain
+<Resources title="Note from James: whenever I read a new white-paper or listen to a new blockchain idea, I try to evaluate what technical, theoretical, and trust trade-offs are being made to enable whatever benefits are claimed: Bitcoin is generally a good reference point to use for those comparisons." text="One key thing we want to emphasize here is that many things in blockchain are trade-offs. These trade-offs exist throughout the field, and they are also one of the best ways to assess and evaluate new blockchain projects that you may discover." resources={[ {} ]} />
+
+# Scalability: Potential Solutions
+In the following sections, we highlight 3 technical methods that increase the scalability of Blockchain networks. Each solution has various trade-offs, and it is likely that none of them are complete solutions for scalability.
+
+## Potential Solution 1: Sidechains
 Sidechains independently handle transactions and regularly “settle up” with the main blockchain.
 //image of sidechain
 As you see here, the “main blockchain” could be something like Bitcoin. Bitcoin has fairly high transaction costs, which can only transmit a limited amount of information. This does not scale to everyday transactions: a single high-traffic retailer such as Starbucks would quickly overwhelm the system. If you create a sidechain, however, you can interlink an independent system with higher throughput into the network.
@@ -121,7 +103,12 @@ Vulnerabilities are more common than a reputable, secure public blockchain, but 
 
 Sidechains offer superior throughput compared to a normal blockchain, significantly less latency (because you are not waiting for blocks to process in between transactions, you just need your IOUs to propagate the sidechain), and far lower fees (however, there is a larger fee, ~$4 when I checked, to set up a bidirectional payment channel on the Lightning network - other sidechains could bring this down.)
 
-##### Bitcoin-NG
+*Lightning Network*
+- **Throughput**: 1000*tx/sec*
+- **Latency**: ~40 *seconds*
+- **Fee**: $<0.05*/tx (as of 03/06/2020)*
+
+## Potential Solution 2: Bitcoin-NG
 Bitcoin-NG is similar to a sidechain, but instead of being a layer on top of a blockchain, it actually allows for the same decentralized control that Bitcoin does, while allowing centralized processing of transactions by whichever node has mined the latest block.
 
 Leader Election
@@ -148,7 +135,12 @@ I couldn’t find an estimate of the transaction fee - this system has not been 
 
 Medium waiting time
 
-##### Ripple, Private/Permissioned Blockchains
+*Bitcoin-NG*
+- **Throughput**: 100+tx/sec
+- **Latency**: 10-40 seconds
+- **Fee**: $less than Bitcoin*/tx (as of 03/06/2020)*
+
+## Potential Solution 3: Ripple, Private/Permissioned Blockchains
 *Ripple*
 
 - 1500tx/sec*
