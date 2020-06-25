@@ -4,19 +4,20 @@ metaTitle: "Introduction to Oracles"
 metaDescription: "This page covers various implementation of Blockchain Oracles which can be used to get real world information onto a Blockchain network."
 ---
 
-### Note from the authors
-Just as a disclaimer, this page won’t be going into every project relating to oracles. There has been a lot of criticism of Chainlink specifically as Coinbase oracles have come out, and we consider it unproductive to introduce that sort of discussion into this course. Instead, we will cover the technical attributes of oracles so that it will be easier for others to make their own analysis of these systems.
-
 ## Basic Blockchain Use Cases
-Blockchain is one of the hottest emerging technology in our world today. Boasting a (somewhere around - who knows with the volatility) $300 billion value of Cryptocurrency alone, the potential is clearly huge. Smart contracts have come around and exponentially expanded the possibilities for Blockchain technology, for use cases such as:
+Blockchain is one of the hottest emerging technology in our world today. Boasting a roughly $300 billion "total market cap" of Cryptocurrency alone, the potential is clearly huge. Smart contracts have come around and exponentially expanded the possibilities for Blockchain technology, for use cases such as:
 
 1. Prediction Markets (betting)
 1. Futures (finance)
 1. Insurance (claims)
 1. Contracts (fulfillment)
-...
 
-However, each of these use cases leave one question unanswered: for any distributed application which wants to leverage real world data, such as a betting contract determining which sports team won a game, how does that application get that information on-chain in reliable, trusted manner?
+<Resources
+    title="Note from the authors" text="However, each of these use cases leave one question unanswered. Any distributed application which wants to leverage real world data, such as a betting contract determining which sports team won a game, will need to get that data onto its Blockchain somehow. So, how does that application get that information on-chain in reliable, trusted manner?"
+    resources={[
+        {text: "This course aims to cover the technical attributes of oracles, as opposed to specific projects." }
+    ]}
+/>
 
 ## Example: Insurance
 
@@ -58,23 +59,28 @@ Without them, many smart contracts lose their guarantees
 
 #### Oracles: Example
 
-- 56,050,000$
-- Online gambling market
 
+**Online gambling market:**
+- 56,050,000$ annually
 - ~10,000,000 users
 - Roughly 1/20 adults will partake in some form of online gambling
+- 280% Growth since 2009
 
-- 280%
-- Growth since 2009
-Source: https://www.statista.com/statistics/270728/market-volume-of-online-gaming-worldwide/
+<Resources
+    title="Gambling Data:" text="This market, with its significant growth and large market cap, has begun to be impacted by Blockchain."
+    resources={[
+        {link: "https://www.statista.com/statistics/270728/market-volume-of-online-gaming-worldwide/", text: "Statista.com"}
+    ]}
+/>
 
-// find citation for "!!!!!!!!" part, I think it's about 10%
+It is typically nearly impossible to reliably determine and verify the results of many things that are used for gambling. For example, a game as simple as blackjack could be rigged in favor of the dealer to the tune of 1% gambling volume per day. With a smart contract, online gambling can be verifiably fair with transparency around any dealer biases present in games.
 
-Blockchain gambling has begun to take a large chunk of that market: !!!!!!!!!!!!!!. It is typically nearly impossible to reliably determine and verify the results of many things that are used for gambling. For example, a game as simple as blackjack could be rigged in favor of the dealer to the tune of 1% gambling volume per day. With a smart contract, online gambling can be verifiably fair with transparency around any dealer biases present in games. However, many areas of online gambling are not as simple as blackjack. In sports betting, without an oracle, you cannot determine which team won a game; as a result, sports betting requires some sort of oracle. For a game like the Superbowl, these contracts may begin to yield tens or hundreds of millions of dollars, creating a massive financial incentive for oracles to behave dishonorably (i.e. maliciously).
+However, many areas of online gambling are not as simple as blackjack. In sports betting, without an oracle, you cannot determine which team won a game; as a result, sports betting requires some sort of oracle. For a game like the Superbowl, **these contracts may begin to yield tens or hundreds of millions of dollars, creating a massive financial incentive for oracles to behave dishonorably, reporting data that would lead to their bets succeeding.**
 
 At this point, hopefully it is clear why we need oracles: without them, smart contracts are restricted to use cases that solely involve data that already exists on-chain, such as cryptocurrency. Once we have an oracle, we also need to consider if it is reliable enough for the use case at hand.
 
-// side thought: mention that while traditional online gambling companies are tied to an established legal entity that could be sued in case of illegitimate behavior, smart contracts for gambling can be somewhat anonymous.
+##### Gambling Legality & Blockchain
+While traditional online gambling companies are tied to an established legal entity that could be sued in case of illegitimate behavior, smart contracts for gambling can be somewhat anonymous. Additionally, in places where gambling or online gambling may be illegal, gambling on the Blockchain is hard to prevent and prosecute.
 
 ### Oracle Requirements
 Taking into consideration the why smart contracts and Blockchain networks might want to use oracles, here's how we would define these requirements:
