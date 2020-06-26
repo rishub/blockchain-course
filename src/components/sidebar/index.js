@@ -107,6 +107,10 @@ const SidebarLayout = ({ location }) => (
       }
     `}
     render={({ allMdx }) => {
+      const references = allMdx.edges.filter(edge => edge.node.fields.title.toLowerCase().includes("reference"));
+      
+      const notReferences = allMdx.edges.filter(edge => !edge.node.fields.title.toLowerCase().includes("reference"));
+
       return (
         <Sidebar>
           {config.sidebar.title ? (
@@ -116,7 +120,9 @@ const SidebarLayout = ({ location }) => (
             />
           ) : null}
           <ul className={'sideBarUL'}>
-            <Tree edges={allMdx.edges} />
+            <Tree edges={notReferences} />
+            <Divider />
+            <Tree edges={references} />
             {config.sidebar.links && config.sidebar.links.length > 0 && <Divider />}
             {config.sidebar.links.map((link, key) => {
               if (link.link !== '' && link.text !== '') {
