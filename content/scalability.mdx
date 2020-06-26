@@ -4,8 +4,7 @@ metaTitle: "Blockchain Scalability"
 metaDescription: "Scalability is one of the most commonly discussed technical aspects of Blockchain, and also one of the most complicated."
 ---
 # Opening Quote
-“Cryptocurrencies, based on and led by Bitcoin, have shown promise as infrastructure for pseudonymous on-line payments, cheap remittance, trustless digital as-set exchange, and smart contracts.  However, Bitcoin-derived blockchain protocols have inherent scalability limits that trade off between throughput and latency, which withhold the realization of this potential.”
-“Bitcoin-NG” Paper, presented at 13th USENIX Symposium, Eyal et al. (Cornell University)
+<Resources title="Quote" text="Cryptocurrencies, based on and led by Bitcoin, have shown promise as infrastructure for pseudonymous on-line payments, cheap remittance, trustless digital as-set exchange, and smart contracts.  However, Bitcoin-derived blockchain protocols have inherent scalability limits that trade off between throughput and latency, which withhold the realization of this potential." resources={[ {text: "“Bitcoin-NG” Paper, presented at 13th USENIX Symposium, Eyal et al. (Cornell University)"}, {link: "https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-eyal.pdf", text: "Bitcoin-NG"} ]} />
 
 # Scalability in Bitcoin
 Bitcoin's original consensus protocol for maintaining a Blockchain leveraged proof-of-work, guarunteeing that all nodes accepted the longest chain with valid contents and a valid proof-of-work answer to a cryptopuzzle. This simple yet elegant solution brought a few key attributes: **trustlessness, decentralization, anonymity, and significant security from illegitimate transactions**. However, this came with certain limits: **Blockchain has a clear limit to its scalability**, being able to handle a miniscule fraction of the transactions that would take place in an average retail store.
@@ -53,7 +52,8 @@ This process of measurement is quite valuable: repeating some similar form of me
 <Resources title="Suggested Reading" text="We strongly recommend reading the Gencer et al. paper. It goes into detail around various metrics of Blockchain networks to determine their decentralization, as well as related academic research in the field about mining power centralization within pools, resource requirements for participation, and more." resources={[ { link: "https://arxiv.org/abs/1801.03998", text: "Decentralization in Bitcoin and Ethereum Networks" } ]} />
 
 ##### There are MANY trade-offs in Blockchain
-<Resources title="Note from James: whenever I read a new white-paper or listen to a new blockchain idea, I try to evaluate what technical, theoretical, and trust trade-offs are being made to enable whatever benefits are claimed: Bitcoin is generally a good reference point to use for those comparisons." text="One key thing we want to emphasize here is that many things in blockchain are trade-offs. These trade-offs exist throughout the field, and they are also one of the best ways to assess and evaluate new blockchain projects that you may discover." resources={[ {} ]} />
+
+<Resources title="Note from James" text="One key thing we want to emphasize here is that many things in blockchain are trade-offs. These trade-offs exist throughout the field, and they are also one of the best ways to assess and evaluate new blockchain projects that you may discover." resources={[ {text:"Whenever I read a new white-paper or listen to a new blockchain idea, I try to evaluate what technical, theoretical, and trust trade-offs are being made to enable whatever benefits are claimed: Bitcoin is generally a good reference point to use for those comparisons."} ]} />
 
 # Scalability: Potential Solutions
 In the following sections, we highlight 3 technical methods that increase the scalability of Blockchain networks. Each solution has various trade-offs, and it is likely that none of them are complete solutions for scalability.
@@ -160,7 +160,7 @@ At its core, the original Bitcoin-NG paper highlighted stronger guarantees aroun
 
 The metrics for Ripple that are shown above are quite impressive: the best we’ve seen yet. However...
 
-<Resources title="Significant Disclaimer:" text="**Private Blockchain networks do not maintain the same guarantees around decentralization and trustlessness that public Blockchains provide.**" resources={[ { } ]} />
+<Resources title="Significant Disclaimer:" text="**Private Blockchain networks do not maintain the same guarantees around decentralization and trustlessness that public Blockchains provide.**" resources={[ { text: "test" } ]} />
 
 This means that you can achieve high throughput, but **only with a smaller group of trusted partners** (e.g. a network of national banks, a limited network of international banks, a combination of tech companies, etc), which will inherently be less useful to public, individual users (and function more like a traditional product/service).
 
