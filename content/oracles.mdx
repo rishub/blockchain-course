@@ -15,7 +15,7 @@ Blockchain is one of the hottest emerging technology in our world today. Boastin
 <Resources
     title="Note from the authors" text="However, each of these use cases leave one question unanswered. Any distributed application which wants to leverage real world data, such as a betting contract determining which sports team won a game, will need to get that data onto its Blockchain somehow. So, how does that application get that information on-chain in reliable, trusted manner?"
     resources={[
-        {text: "This course aims to cover the technical attributes of oracles, as opposed to specific projects." }
+        {text: "This course aims to cover the technical attributes of oracles, as opposed to all specific projects." }
     ]}
 />
 
@@ -49,6 +49,8 @@ So, what is an oracle?
 Is an oracle RNG for bits? A source of data? Trusted authority? Verifiable authority on the state of the world or a certain claim?
 
 The answer is that practically anything that provides you some answer to the question "What is the state of x" is an oracle, for any given **x**. For example, if you want your smart contract to know what the weather is in Ithaca, New York each day, you could ask someone, check a weather website, call a weather API, or ask a computer hooked up to a thermometer and barometer. All of these solutions are oracles.
+
+
 
 The bigger question that we have here is: what makes a good oracle? To answer that, we need to define the requirements a bit more.
 
@@ -84,26 +86,54 @@ While traditional online gambling companies are tied to an established legal ent
 
 ### Oracle Requirements
 Taking into consideration the why smart contracts and Blockchain networks might want to use oracles, here's how we would define these requirements:
+
 1. What degree of BFT does the oracle have?
- a. What would it cost an actor to push specific data through that oracle?
-1. What is the cost of getting data?
-1. What is the delay in getting data?
-1.
+
+  * What would it cost an actor to push specific data through that oracle?
+
+2. What is the ultimate source of the data? (Company? Web feed? Sensors?)
+2. What is the cost of getting data?
+2. What is the delay in getting data?
+2.
 
 // need to add more here
 
 ### Oracles: Hardware
-#### Oracles: SegWit
-### Oracles: Centralized/Trusted Actors
-### Oracles: Decentralized/Voting
-#### Oracles: Incentives and Punishments for Decentralized Oracles
+<Resources
+    title="Suggested Reading" text="Many Blockchain use cases involve some form of hardware oracle. In a supply chain solution, this might be a barcode scanner, camera, or simply an authorized laptop. With these solutions, workers can use hardware to verify which items they handle as they move through the supply chain. However, these oracles by default introduce decreased security guaruntees into the very systems they hope to reinforce. These solutions claim to provide an immutable record documenting and proving the supply chain path of individual goods. However, immutability does not necessarily imply truth: at any of the aforementioned oracles being used to track the goods' movement through the supply chain, information is liable to be faked. For example, a barcode scanner could scan copies of barcodes of items without ever seeing the actual item being verified, falsely providing a supply chain record."
+    resources={[
+        {link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3382343", text: "“The Oracle Problem”. In this paper, Egbert provides a comprehensive explanation around the trade-off between Blockchain guarantees and the use of oracles."}
+    ]}
+/>
 
-##### Resources for learning / topics that need to be covered
-- l
+### Oracles: Centralized/Trusted Actors
+Coinbase...
+
+### Oracles: Decentralized/Voting
+?
+
+#### Oracles: Incentives and Punishments for Decentralized Oracles
+?
+
+### Oracles: TEE
+<Resources
+    title="Suggested Reading" text="Zhang et al., from the IC3 (Cornell University), look into using “Trusted Execution Environments” (TEEs) to provide an extra guaruntee to oracles by verifying that the oracle is sourcing its data by running specific code without data manipulation. TEEs, such as Intel's SGX, are enclaves within a computer that are isolated and encrypted through specialized hardware; this allows sensitive data to be partitioned, and is able to significantly reduce the possibility for oracle code to be manipulated. Mast, Chen & Sirer expand upon this design to run databases within TEEs."
+    resources={[
+        {link: "https://dl.acm.org/doi/abs/10.1145/2976749.2978326", text: "Town crier: An authenticated data feed for smart contracts."},
+        {link: "https://www.researchgate.net/publication/321325816_Scaling_Databases_through_Trusted_Hardware_Proxies", text: "Scaling Databases through Trusted Hardware Proxies"}
+    ]}
+/>
+
+&nbsp;
+![Diagram. 3 boxes, left to right: Blockchain, TC Server, Data Source. Shows a smart contract interacting with the Town Crier contract, which leverages a server using a Trusted Execution Environment to access internet data sources in a trusted manner.](images/town-crier-1.png)
+<center>(Source: TownCrier.com)</center>
+&nbsp;
 
 # References
-- Town Crier: An Authenticated Data Feed for Smart Contracts. Zhang, Fan and Cecchetti, Ethan and Croman, Kyle and Juels, Ari and Shi, Elaine. iacr.
-- An introduction to oracles for asynchronous distributed systems. Achour Mostefaoui, Eric Mourgaya, Michel Raynal. FGCS.
-Emin Gun Sirer. CS6466 at Cornell, and in general.
+- Town Crier: An Authenticated Data Feed for Smart Contracts. Zhang et al. (Cornell University)
+- An introduction to oracles for asynchronous distributed systems. Mostefaoui et al. (IRISA)
 - Statistics on gambling from Statista.com - https://www.statista.com/statistics/270728/market-volume-of-online-gaming-worldwide/
-- Linh Vuu, who contributed to slides which some content from this page was taken
+
+# Citations
+- Emin Gun Sirer and his course CS6466 at Cornell, in general.
+- Linh Vuu, who contributed to the original talk by James Gan which parts of the content from this page was taken from.
