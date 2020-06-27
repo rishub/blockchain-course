@@ -25,7 +25,7 @@ const InputSlider = ({ label, unit, value, setValue }) => {
   })();
 
   const handleSliderChange = (event, newValue) => {
-    setValue(newValue);
+    setValue(newValue || 1);
   };
 
   const handleInputChange = (event) => {
@@ -33,8 +33,8 @@ const InputSlider = ({ label, unit, value, setValue }) => {
   };
 
   const handleBlur = () => {
-    if (value < 0) {
-      setValue(0);
+    if (value < 1) {
+      setValue(1);
     } else if (value > 100) {
       setValue(100);
     }
@@ -46,7 +46,7 @@ const InputSlider = ({ label, unit, value, setValue }) => {
       <Grid container spacing={2} alignItems="center">
         <Grid item xs>
           <Slider
-            value={typeof value === 'number' ? value : 0}
+            value={typeof value === 'number' ? value : 1}
             onChange={handleSliderChange}
             aria-labelledby="input-slider"
           />
@@ -60,7 +60,7 @@ const InputSlider = ({ label, unit, value, setValue }) => {
             onBlur={handleBlur}
             inputProps={{
               step: 1,
-              min: 0,
+              min: 1,
               max: 100,
               type: 'number',
               'aria-labelledby': 'input-slider',
@@ -112,7 +112,11 @@ const BlockSpeed = () => {
   labels:['Visa', 'Bitcoin']
 }
 
+const uploadSpeed = (mb * 1024 * 1024 * 8 / minutes / 60 * (8-1) * 4 / 1000 / 1000).toFixed(2)
+
   return (
+    <Fragment>
+      <h3 style={{ paddingBottom: "10px" }}>Transactions / second calculator</h3>
       <div style={{ border: "1px black solid", padding: "10px" }}>
         {!showResults && (
           <Fragment>
@@ -124,10 +128,13 @@ const BlockSpeed = () => {
         {showResults && (
           <Fragment>
             <HorizontalBar  data={data} options={options} />
-            <button style={{ padding: "10px" }} onClick={() => setShowResults(false)}>Change filters</button>
+            <p style={{ color: uploadSpeed > 52 ? "red" : "green" }}>Bandwidth (upload speed) required: {uploadSpeed} mb/s</p>
+            <p>Average Bandwidth in the US: 52 mb/s</p>
+            <button style={{ padding: "10px", marginTop: "10px" }} onClick={() => setShowResults(false)}>Change filters</button>
           </Fragment>
         )}
       </div>
+      </Fragment>
   )
 };
 
