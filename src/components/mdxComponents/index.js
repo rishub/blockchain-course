@@ -5,6 +5,7 @@ import CodeBlock from './codeBlock';
 import AnchorTag from './anchor';
 import Resources from './resources';
 import BlockSpeed from './block-speed';
+import LightningvsBitcoin from './lightning-vs-bitcoin';
 
 const StyledPre = styled('pre')`
   padding: 16px;
@@ -38,8 +39,9 @@ export default {
   ),
   code: CodeBlock,
   a: AnchorTag,
-  Resources: Resources,
-  BlockSpeed: BlockSpeed,
+  Resources,
+  BlockSpeed,
+  LightningvsBitcoin,
   // TODO add `img`
   // TODO add `blockquote`
   // TODO add `ul`
