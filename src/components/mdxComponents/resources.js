@@ -19,15 +19,29 @@ const Resources = ({ text, resources, title }) => {
                 <h4 style={{ marginBottom: "5px" }}>
                     {title || 'Resources'}<i className="material-icons" style={{ fontSize: "20px" }}>lightbulb_outline</i>
                 </h4>
-                {resources.map(({ text, link }) => 
-                    <a 
+                {resources.map(({ text, link }) => {
+                    if (link) {
+                        return (
+                            <a 
+                            style={{ display: "block", fontSize: "14px", marginTop: "8px" }} 
+                            href={link} target="_blank" rel="noopener noreferrer" 
+                            key={link}
+                            >
+                                {text}
+                            </a>
+                        )
+                    }
+
+                    return (
+                        <p 
                         style={{ display: "block", fontSize: "14px", marginTop: "8px" }} 
                         href={link} target="_blank" rel="noopener noreferrer" 
                         key={link}
-                    >
-                        {text}
-                    </a>
-                )}
+                        >
+                            {text}
+                        </p>
+                    ); 
+                })}
             </ResourcesBox>
         </div>
       </div>

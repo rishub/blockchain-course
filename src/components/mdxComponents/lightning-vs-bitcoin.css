@@ -1,0 +1,19 @@
+#bitcoin {
+    position: relative;;
+    -webkit-animation:linear infinite;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 50s;
+}    
+
+#lightning {
+    position: relative;
+    -webkit-animation:linear infinite;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 0.25s;
+}    
+
+
+@-webkit-keyframes run {
+    0% { left: 0;}
+    100%{ left : 80%;}
+}
