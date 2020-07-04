@@ -12,7 +12,9 @@ The original goal of using Blockchain, as per the Bitcoin whitepaper, was to ano
 There is a lot of value in going back to read the original Bitcoin whitepaper here: it emphasizes the benefits of using Blockchain, as well as the requirements to gurauntee those benefits. **We strongly recommend doing that before reading the rest of this content.**
 
 # Privacy
-Blockchain, and Cryptocurrency, have generally gained attention due to their strongly perceived anonymity. There are many examples where individuals have been linked to their activity on Blockchain networks, however. For example, the earliest widely-adopted use case for Cryptocurrency was the Silk Road marketplace. On Silk Road, users could purchase anything, including illegal goods and services. This kicked off a large, illicit online community dealing in everything from drugs to hired crime. [Ross Ulbricht](https://www.fbi.gov/contact-us/field-offices/newyork/news/press-releases/ross-ulbricht-the-creator-and-owner-of-the-silk-road-website-found-guilty-in-manhattan-federal-court-on-all-counts), the founder of Silk Road, was arrested in 2013, 2 years after founding the website. He is now serving two life sentences.
+Blockchain, and Cryptocurrency, have generally gained attention due to their strongly perceived anonymity. These guaruntees are largely created through the use of cryptography. It is pertinant to note that the cryptography in question that is commonly used is explained in the Bitcoin, and subsequent, whitepapers. It is important to understand that cryptography so some extent, to understand the shortcomings and superior methods for privacy.
+
+There are many examples where individuals have been linked to their activity on Blockchain networks, however. For example, the earliest widely-adopted use case for Cryptocurrency was the Silk Road marketplace. On Silk Road, users could purchase anything, including illegal goods and services. This kicked off a large, illicit online community dealing in everything from drugs to hired crime. [Ross Ulbricht](https://www.fbi.gov/contact-us/field-offices/newyork/news/press-releases/ross-ulbricht-the-creator-and-owner-of-the-silk-road-website-found-guilty-in-manhattan-federal-court-on-all-counts), the founder of Silk Road, was arrested in 2013, 2 years after founding the website. He is now serving two life sentences.
 
 Most users of Blockchain technology will not have to fear a lengthy FBI investigation into their identity. However, many individuals still hold on to the value of privacy in their financial lives. For example, an individual with large savings who wants to invest in Cryptocurrency may not want to paint a target on their back for hackers, kidnappers, or other criminals by having their identity linked to a Cryptocurrency wallet with millions of dollars. As a result, the Blockchain industry has sought systems that guaruntee privacy better than Bitcoin is able to.
 
@@ -27,18 +29,20 @@ Various systems have been developed to strengthen the guarantees offered by Bloc
 
 This point emphasizes the difference between the Cryptonote solution and Bitcoin: while Bitcoin has keys that are anonymous, it is fully possible to look through the fully public Blockchain of Bitcoin and find which transactions are going where, and who sent them. This means that once an identity is established for a transaction or wallet, it can be trivial work to trace that identity through their entire history on the Blockchain, unless that individual took special care to obfuscate links between wallets and transactions.
 
-Nicolas van Saberhagen goes on to suggest zero knowledge proofs as a potential solution to this issue, comparing it and analyzing it from a Bitcoin reference point.
+Nicolas van Saberhagen goes on to suggest zero knowledge proofs as a potential solution to this issue, comparing it and analyzing it from a Bitcoin reference point. I recommend reading the CryptoNote whitepaper for a thourough explanation of zero knowledge proofs, including ring transactions. **This page may be updated in the future to include a summary of how zero knowledge proofs work.**
 
 # Privacy Coin: Zcash
-
+<Resources title="Suggested Reading" text="Zcash is another zero knowledge proof system privacy coin. It goes intro elaborate detail on implementing a relatively scalable Cryptocurrency while leveraging zero knowledge proofs. This does not necessarily mean that it is more scalable than Monero or other zero knowledge proof privacy coins, merely that the whitepaper goes more into detail analyzing the scalability of the proposed solution.”:" resources={[ { link: "http://zerocash-project.org/media/pdf/zerocash-extended-20140518.pdf", text: "“Zerocash: Decentralized Anonymous Payments from Bitcoin (extended version)”, Sasson et al., 2014" } ]} />
 
 # Privacy Coin: Enigma
-Once the idea for Smart Contracts started to come up, most notably through Vitalik Buterin's Ethereum whitepaper, this dicussion of privacy began to expand beyond anonymity within financial transactions.
+Once the idea for Smart Contracts started to come up, most notably through Vitalik Buterin's Ethereum whitepaper, this dicussion of privacy began to expand beyond anonymity within financial transactions. Enigma is a project that looks to expand privacy into smart contracts.
 
-# Possible improvements for more anonymity, privacy
+<Resources title="Suggested Reading" text="The Enigma whitepaper outlines a system that can support smart contracts in a decentralized manner without exposing security vulnerabilities within the code, or the data being processed by the contracts. This expands the overall security and privacy for decentralized applications. These smart contracts are deemed 'secret contracts'.”:" resources={[ { link: "https://web.media.mit.edu/~guyzys/data/enigma_full.pdf", text: "“Enigma: Decentralized Computation Platform with Guaranteed Privacy”, Zyskind, Nathan, & Pentland, 2015 (MIT Media Lab)" } ]} />
 
-# + more, lots to discuss here
+Enigma accomplishes secret contracts by creating a secure multi-party computation protocol as a second-layer solution. The whitepaper goes into detail on how they accomplished that, challenges they ran into, the incentives, punishments, and fees required to make the system work, and possible use cases of their solution (including: data marketplaces, secure backends, internal compartmentalization, N-Factor authentication, identity, IoT data, distributed personal data stores, crypto banks, e-voting, and Cryptocurrency wallets).
 
+# Possible Further Improvements
+In general, most privacy coins leverage complex math, incentive economics, and cryptography. It is hard for either of us to predict which improvements will come up next, as neither of us specialize in cryptography. We anticipate that more secure privacy solution will arise around transactions and secret contracts, as well as Blockchain integration with the everyday internet.
 
 # References
 - https://www.quora.com/What-is-proof-of-work
