@@ -59,10 +59,6 @@ Oracles are the backbone of Smart Contracts
 
 Without them, many smart contracts lose their guarantees
 
-
-Here is an example of how blockchain and oracles can be used in supply chain. We start with the ideal timeline of an item being imported to the US. We will see in the second timeline how this is not always realistic, and things like tampering are possible. Finally, we will see how oracles can be used to solve this problem in the 3rd timeline.
-<OracleExamples />
-
 #### Oracles: Example
 
 
@@ -85,7 +81,7 @@ However, many areas of online gambling are not as simple as blackjack. In sports
 
 At this point, hopefully it is clear why we need oracles: without them, smart contracts are restricted to use cases that solely involve data that already exists on-chain, such as cryptocurrency. Once we have an oracle, we also need to consider if it is reliable enough for the use case at hand.
 
-#### Gambling Legality & Blockchain
+##### Gambling Legality & Blockchain
 While traditional online gambling companies are tied to an established legal entity that could be sued in case of illegitimate behavior, smart contracts for gambling can be somewhat anonymous. Additionally, in places where gambling or online gambling may be illegal, gambling on the Blockchain is hard to prevent and prosecute.
 
 ### Oracle Requirements
@@ -111,13 +107,38 @@ Taking into consideration the why smart contracts and Blockchain networks might 
 />
 
 ### Oracles: Centralized/Trusted Actors
-Coinbase...
+Oracles can be created in a centralized manner, in which a trusted actor is providing information to be later consumed by decentralized applications. The most well-known example of a centralized oracle is the recently released Coinbase oracle. This oracle is capable of providing real-time price information; however, this introduces a degree of reliance on Coinbase.
+
+As a simple example, a smart contract may intend to offer exchanges between certain Cryptocurrencies. However, without creating an order book, the creators of that smart contract may try to rely on the centralized oracle to determine what prices to offer for exchanges. The owner of the centralized oracle could temporarily manipulate the prices. This manipulation could change the oracle’s price reporting from a true state of 1 Bitcoin to 2 Ethereum, to 10000 Bitcoin to 0.0001 Ethereum, and the malicious actor could then sell an equal amount of Ethereum to the smart contract’s Bitcoin balance.
+
+There are many other, more elaborate examples that could be susceptible to manipulation of a centralized oracle, most notably smart contracts for predictive gambling. Even for a simple Cryptocurrency price oracle, Stablecoins and options come to mind as having potential vulnerabilities when implemented with centralized oracles.
 
 ### Oracles: Decentralized/Voting
-?
+The alternative to centralized oracles is decentralized oracles. Decentralized oracles leverage input from lots of different sources to determine the truths that are reported. This category expands in a few different ways. For example:
+
+1. Voting between a number of independent, trusted actors. This could be trusted individuals well-known in the technology community, or it could be large multinational corporations.
+
+1. Voting within the public.
+
+These different membership methods can also be broken down with different solutions:
+
+1. Hardware devices with sensors that report their information.
+
+1. Servers that fetch data from the internet.
+
+1. Randomness derived from all the actors contributing to the decentralized system
+
+// Visualization for each of these?
+
+// maybe include something about types of data, i.e. price, events, state of world, answer to more abstract questions, polls, etc
+
+It is difficult to go into too much detail here, because there is so much innovation possible in this area. Please refer to the suggested reading to understand how some of these systems might be implemented, and to explore the space more.
+
 
 #### Oracles: Incentives and Punishments for Decentralized Oracles
-?
+In decentralized oracles, there is a question of incentives to consider. In many situations, there may be economic benefit to a majority of the actors to answer untruthfully, or even for additional actors to join the oracle network and answer untruthfully. If thousands of users have interacted with a betting contract, primarily towards the direction of an event with 90% odds of occurring, there might be a million dollars in the contract. Let’s say that there are 99 members in the oracle network: it would only take 100 members to join the oracle network and break the consensus, allowing them to make the oracle report an event that had 1% odds of occurring, and suddenly those 100 people could win the bet regardless of the true outcome of the event, each winning ten thousand dollars.
+
+//cite and summarize some papers
 
 ### Oracles: TEE
 <Resources
