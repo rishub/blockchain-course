@@ -108,6 +108,8 @@ As a simple example, a smart contract may intend to offer exchanges between cert
 
 There are many other, more elaborate examples that could be susceptible to manipulation of a centralized oracle, most notably smart contracts for predictive gambling. Even for a simple Cryptocurrency price oracle, Stablecoins and options come to mind as having potential vulnerabilities when implemented with centralized oracles.
 
+// add some cites
+
 # Oracles: Decentralized/Voting
 The alternative to centralized oracles is decentralized oracles. Decentralized oracles leverage input from lots of different sources to determine the truths that are reported. This category expands in a few different ways. There are two main types of decentralized oracles, with varying membership policies:
 
@@ -127,6 +129,8 @@ These types can be further broken down with different solutions:
 
 // maybe include something about types of data, i.e. price, events, state of world, answer to more abstract questions, polls, etc
 
+// add extra readings
+
 <Resources
     title="Suggested Reading" text="It is difficult to go into too complete detail here, because there is so much innovation possible in this area. Please refer to the suggested readings to understand how some of these systems might be implemented, and to explore the space more. Oracles involve many complicated topics within consensus, incentives, trust, and security. There are a number of oracles that accomplish some degree of decentralization, but arguably they are still susceptible to manipulation and there is much more improvement to be done."
     resources={[
@@ -138,7 +142,7 @@ These types can be further broken down with different solutions:
 # Oracles: Incentives and Punishments for Decentralized Oracles
 In decentralized oracles, there is a question of incentives to consider. In many situations, there may be economic benefit to a majority of the actors to answer untruthfully, or even for additional actors to join the oracle network and answer untruthfully. If thousands of users have interacted with a betting contract, primarily towards the direction of an event with 90% odds of occurring, there might be a million dollars in the contract. Let’s say that there are 99 members in the oracle network: it would only take 100 members to join the oracle network and break the consensus, allowing them to make the oracle report an event that had 1% odds of occurring, and suddenly those 100 people could win the bet regardless of the true outcome of the event, each winning ten thousand dollars.
 
-//cite and summarize some papers
+//cite and summarize some papers. rework example a bit
 
 # Oracles: TEE
 <Resources
