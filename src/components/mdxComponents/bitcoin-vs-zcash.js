@@ -28,10 +28,10 @@ const transactions = [
     },
     {
         sender: "36RYGSB921qhXPgBfJi91MUSD2UkHoWhA8",
-        receiver: "1F67WtwkgyV3KitMBAmYoSJn7SD2bb2Mbj",
+        receiver: "1DWod6wBBrRRuCddDud9roudyFQPbgbEjJ",
         senderName: "Adam",
-        receiverName: "Alice",
-        amount: 3
+        receiverName: "Bob",
+        amount: 1
     },
     {
         sender: "1DWod6wBBrRRuCddDud9roudyFQPbgbEjJ",
