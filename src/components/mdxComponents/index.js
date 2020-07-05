@@ -6,6 +6,7 @@ import AnchorTag from './anchor';
 import Resources from './resources';
 import BlockSpeed from './block-speed';
 import LightningvsBitcoin from './lightning-vs-bitcoin';
+import EnigmaVisualization from './enigma-visualization';
 
 const StyledPre = styled('pre')`
   padding: 16px;
@@ -42,6 +43,7 @@ export default {
   Resources,
   BlockSpeed,
   LightningvsBitcoin,
+  EnigmaVisualization,
   // TODO add `img`
   // TODO add `blockquote`
   // TODO add `ul`
