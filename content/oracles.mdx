@@ -41,7 +41,12 @@ Bob has plan A and loses an arm due to a skiing accident. The hospital rules it 
 
 Wait - but I thought this was a smart contract? How is it possible for the smart contract to break its programmed code?
 
-In essence, there needs to be a "trigger" for the smart contract to perform actions. Oracles typically serve as those triggers when the smart contract requires real world data. Oracles can be someone with a private key for the smart contract, a webhook, a function call, decentralized voting, hardware plugged into the network, or various other solutions that we will discuss below. Each of these solutions have varying guarantees and attributes.
+<Resources
+    title="Suggested Reading" text="In essence, there needs to be a “trigger” for the smart contract to perform actions. Oracles typically serve as those triggers when the smart contract requires real world data. Oracles can be someone with a private key for the smart contract, a webhook, a function call, decentralized voting, hardware plugged into the network, or various other solutions that we will discuss below. Each of these solutions have varying guarantees and attributes."
+    resources={[
+        {link: "https://www.researchgate.net/publication/338368194_From_Oracles_to_Trustworthy_Data_On-Chaining_Systems", text: "From Oracles to Trustworthy Data On-Chaining Systems, Heiss & Tai, 2019. Good overview of how decentralized applications can suffer without close attention to the oracles being used."}
+    ]}
+/>
 
 # Definition: Oracles
 So, what is an oracle?
@@ -50,18 +55,23 @@ Is an oracle RNG for bits? A source of data? Trusted authority? Verifiable autho
 
 The answer is that practically anything that provides you some answer to the question "What is the state of x" is an oracle, for any given **x**. For example, if you want your smart contract to know what the weather is in Ithaca, New York each day, you could ask someone, check a weather website, call a weather API, or ask a computer hooked up to a thermometer and barometer. All of these solutions are oracles.
 
+<Resources
+    title="Quote" text="“A blockchain oracle is a mechanism that fetches data from the external world to include it in the isolated execution envi ronment of a blockchain. Blockchain oracles are generally off-chain components, so the reliability properties of blockchains do not apply to them. ”"
+    resources={[
+        {link: "https://www.researchgate.net/publication/338368194_From_Oracles_to_Trustworthy_Data_On-Chaining_Systems", text: "Reliability analysis for blockchain oracles, Lo et al., 2015. This paper provides a great analysis of various types and implementations of oracles, including TownCrier, ChainLink, Augur, and Gnosis."}
+    ]}
+/>
 
-
-The bigger question that we have here is: what makes a good oracle? To answer that, we need to define the requirements a bit more.
+The bigger question that we have here is: **what makes a good oracle?** To answer that, we need to define the requirements a bit more.
 
 # Why Use Oracles?
 Oracles are the backbone of Smart Contracts
 
 Without them, many smart contracts lose their guarantees. To demonstrate that, we offer a real world example of the impact oracles could have.
 
-Here is an example of how blockchain and oracles can be used in supply chain. 
-We start with the ideal timeline of an item being imported to the US. 
-We will see in the second timeline how this is not always realistic, and things like tampering are possible. 
+Here is an example of how blockchain and oracles can be used in supply chain.
+We start with the ideal timeline of an item being imported to the US.
+We will see in the second timeline how this is not always realistic, and things like tampering are possible.
 Finally, we will see how oracles can be used to solve this problem in the 3rd timeline.
 <OracleExamples />
 
@@ -114,8 +124,6 @@ As a simple example, a smart contract may intend to offer exchanges between cert
 
 There are many other, more elaborate examples that could be susceptible to manipulation of a centralized oracle, most notably smart contracts for predictive gambling. Even for a simple Cryptocurrency price oracle, Stablecoins and options come to mind as having potential vulnerabilities when implemented with centralized oracles.
 
-// add some cites
-
 # Oracles: Decentralized/Voting
 The alternative to centralized oracles is decentralized oracles. Decentralized oracles leverage input from lots of different sources to determine the truths that are reported. This category expands in a few different ways. There are two main types of decentralized oracles, with varying membership policies:
 
@@ -131,16 +139,11 @@ These types can be further broken down with different solutions:
 
 1. Randomness derived from all the actors contributing to the decentralized system
 
-// Visualization for each of these?
-
-// maybe include something about types of data, i.e. price, events, state of world, answer to more abstract questions, polls, etc
-
-// add extra readings
-
 <Resources
     title="Suggested Reading" text="It is difficult to go into too complete detail here, because there is so much innovation possible in this area. Please refer to the suggested readings to understand how some of these systems might be implemented, and to explore the space more. Oracles involve many complicated topics within consensus, incentives, trust, and security. There are a number of oracles that accomplish some degree of decentralization, but arguably they are still susceptible to manipulation and there is much more improvement to be done."
     resources={[
-        {link: "https://dl.acm.org/doi/abs/10.1145/2976749.2978326", text: "Town crier: An authenticated data feed for smart contracts."}
+        {link: "https://dl.acm.org/doi/abs/10.1145/2976749.2978326", text: "Town crier: An authenticated data feed for smart contracts."},
+        {link: "https://blockchain.ieee.org/technicalbriefs/march-2019/astraea-a-decentralized-blockchain-oracle", text: "Astraea: A Decentralized Blockchain Oracle."}
     ]}
 />
 
@@ -148,7 +151,12 @@ These types can be further broken down with different solutions:
 # Oracles: Incentives and Punishments for Decentralized Oracles
 In decentralized oracles, there is a question of incentives to consider. In many situations, there may be economic benefit to a majority of the actors to answer untruthfully, or even for additional actors to join the oracle network and answer untruthfully. If thousands of users have interacted with a betting contract, primarily towards the direction of an event with 90% odds of occurring, there might be a million dollars in the contract. Let’s say that there are 99 members in the oracle network: it would only take 100 members to join the oracle network and break the consensus, allowing them to make the oracle report an event that had 1% odds of occurring, and suddenly those 100 people could win the bet regardless of the true outcome of the event, each winning ten thousand dollars.
 
-//cite and summarize some papers. rework example a bit
+<Resources
+    title="Suggested Reading" text="In order to prevent these situations, decentralized oracles can require members of the system (“Data Sources”) to put up deposits in order to participate in the network. These deposits are used to impart penalties for voting incorrectly, while the system pays out rewards to data sources that vote correctly. This system is susceptible to certain game theory issues, such as if all participants decide that it is most beneficial to collude, regardless of the answer. For example, a data source could simply provide the answer that it sees other data sources providing, as opposed to trying to determine an answer independently (there are feasible solutions to many of these sorts of problems - for the example provided, votes could be secret until the voting period is over)."
+    resources={[
+        {link: "https://www.researchgate.net/publication/338368194_From_Oracles_to_Trustworthy_Data_On-Chaining_Systems", text: "From Oracles to Trustworthy Data On-Chaining Systems, Heiss & Tai, 2019. Section V details incentive and punishment structures in more detail, including problems with and solutions leveraging game theory."}
+    ]}
+/>
 
 # Oracles: TEE
 <Resources
@@ -163,6 +171,14 @@ In decentralized oracles, there is a question of incentives to consider. In many
 ![Diagram. 3 boxes, left to right: Blockchain, TC Server, Data Source. Shows a smart contract interacting with the Town Crier contract, which leverages a server using a Trusted Execution Environment to access internet data sources in a trusted manner.](images/town-crier-1.png)
 <center>(Source: TownCrier.com)</center>
 &nbsp;
+
+# Recommended Future Reading
+<Resources
+    title="Suggested Reading" text="Alexander Egberts has written an incredibly detailed, ~50 page paper explaining oracles in more detail. I strongly recommend reading this paper as a next step to understanding oracles."
+    resources={[
+        {link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3382343", text: "The Oracle Problem - An Analysis of how Blockchain Oracles Undermine the Advantages of Decentralized Ledger Systems"}
+    ]}
+/>
 
 # References
 - Town Crier: An Authenticated Data Feed for Smart Contracts. Zhang et al. (Cornell University)
