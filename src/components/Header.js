@@ -10,6 +10,7 @@ import LoadingProvider from './mdxComponents/loading';
 import { DarkModeSwitch } from './DarkModeSwitch';
 
 const help = require('./images/help.svg');
+const chainCoursesLogo = require('./images/logo.png');
 
 const isSearchEnabled = config.header.search && config.header.search.enabled ? true : false;
 
@@ -99,13 +100,13 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
               <Link to={finalLogoLink} className={'navBarBrand'}>
                 <img
                   className={'img-responsive displayInline'}
-                  src={logo.image !== '' ? logo.image : logoImg}
+                  src={chainCoursesLogo}
                   alt={'logo'}
                 />
               </Link>
               <div
                 className={'headerTitle displayInline'}
-                dangerouslySetInnerHTML={{ __html: headerTitle }}
+                dangerouslySetInnerHTML={{ __html: "Blockchain" }}
               />
             </div>
             {config.header.social ? (
