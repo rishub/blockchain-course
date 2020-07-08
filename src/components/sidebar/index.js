@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tree from './tree';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
@@ -108,6 +108,7 @@ const SidebarLayout = ({ location }) => (
     `}
     render={({ allMdx }) => {
       const references = allMdx.edges.filter(edge => edge.node.fields.title.toLowerCase().includes("reference"));
+      const [openReferences, setOpenReferences] = useState(false);
       
       const notReferences = allMdx.edges.filter(edge => !edge.node.fields.title.toLowerCase().includes("reference"));
 
@@ -122,7 +123,15 @@ const SidebarLayout = ({ location }) => (
           <ul className={'sideBarUL'}>
             <Tree edges={notReferences} />
             <Divider />
-            <Tree edges={references} />
+            <ListItem onClick={() => setOpenReferences(!openReferences)} style={{ cursor: "pointer", marginLeft: "0.45rem" }}>
+              References
+              <span style={{ fontSize: "12px", marginLeft: "5px" }}>
+                {openReferences ? <span>&#x25BA;</span> : <span>&#x25BC;</span>}
+              </span>
+            </ListItem>
+            {openReferences && <div style={{ marginLeft: "10px" }}>
+              <Tree edges={references} />
+            </div>}
             {config.sidebar.links && config.sidebar.links.length > 0 && <Divider />}
             {config.sidebar.links.map((link, key) => {
               if (link.link !== '' && link.text !== '') {

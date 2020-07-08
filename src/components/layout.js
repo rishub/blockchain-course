@@ -55,7 +55,7 @@ const MaxWidth = styled('div')`
 `;
 
 const LeftSideBarWidth = styled('div')`
-  width: 298px;
+  width: 238px;
 `;
 
 const RightSideBarWidth = styled('div')`
@@ -78,7 +78,7 @@ const Layout = ({ children, location }) => (
         <Content>
           <MaxWidth>{children}</MaxWidth>
         </Content>
-        <RightSideBarWidth className={'hiddenMobile'}>
+        <RightSideBarWidth className={'hidden1400'}>
           <RightSidebar location={location} />
         </RightSideBarWidth>
       </Wrapper>
