@@ -12,7 +12,7 @@ const ResourcesBox = styled('div')`
 const Resources = ({ text, resources, title }) => {
   return (
       <Fragment>
-      <div className="visibleDesktopView" style={{ display: "flex",  alignItems: "center", marginRight: "-200px" }}>
+      <div className="hidden1080" style={{ display: "flex",  alignItems: "center", marginRight: "-200px" }}>
         <p className="paragraph">{text}</p>
         <div style={{ paddingLeft: "50px", maxWidth: "200px" }}>
             <ResourcesBox>

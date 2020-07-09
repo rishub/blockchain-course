@@ -735,6 +735,18 @@ export const baseStyles = injectGlobal`
     -webkit-transition: top 0.5s, bottom 0.5s;
   }
 
+  @media (max-width: 1400px) {
+    .hidden1400 {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    .hidden1080 {
+      display: none !important;
+    }
+  }
+
   @media (max-width: 767px) {
     .formElement svg path {
       fill: #001934;
