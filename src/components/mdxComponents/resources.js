@@ -12,7 +12,7 @@ const ResourcesBox = styled('div')`
 const Resources = ({ text, resources, title }) => {
   return (
       <Fragment>
-      <div className="hidden1080" style={{ display: "flex",  alignItems: "center", marginRight: "-200px" }}>
+      <div className="hiddenMobile" style={{ display: "flex",  alignItems: "center", marginRight: "-200px" }}>
         <p className="paragraph">{text}</p>
         <div style={{ paddingLeft: "50px", maxWidth: "200px" }}>
             <ResourcesBox>
@@ -45,7 +45,41 @@ const Resources = ({ text, resources, title }) => {
             </ResourcesBox>
         </div>
       </div>
-      <p className="paragraph visibleMobileView">{text}</p>
+      <div className="visibleMobileView">
+      <div style={{ display: "flex",  alignItems: "center" }}>
+        <p className="paragraph" style={{ width: "50%"}}>{text}</p>
+        <div style={{ paddingLeft: "50px", maxWidth: "50%" }}>
+            <ResourcesBox>
+                <h4 style={{ marginBottom: "5px" }}>
+                    {title || 'Resources'}<i className="material-icons" style={{ fontSize: "20px" }}>lightbulb_outline</i>
+                </h4>
+                {resources.map(({ text, link }) => {
+                    if (link) {
+                        return (
+                            <a 
+                            style={{ display: "block", fontSize: "14px", marginTop: "8px" }} 
+                            href={link} target="_blank" rel="noopener noreferrer" 
+                            key={link}
+                            >
+                                {text}
+                            </a>
+                        )
+                    }
+
+                    return (
+                        <p 
+                        style={{ display: "block", fontSize: "14px", marginTop: "8px" }} 
+                        href={link} target="_blank" rel="noopener noreferrer" 
+                        key={link}
+                        >
+                            {text}
+                        </p>
+                    ); 
+                })}
+            </ResourcesBox>
+        </div>
+        </div>
+    </div>
       </Fragment>
   )
 };
