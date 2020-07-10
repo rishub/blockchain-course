@@ -9,6 +9,14 @@ const ResourcesBox = styled('div')`
     align-self: stretch;
 `
 
+const ResourcesBoxMobile = styled('div')`
+    width: 60%;
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    align-self: stretch;
+`
+
 const Resources = ({ text, resources, title }) => {
   return (
       <Fragment>
@@ -46,10 +54,9 @@ const Resources = ({ text, resources, title }) => {
         </div>
       </div>
       <div className="visibleMobileView">
-      <div style={{ display: "flex",  alignItems: "center" }}>
-        <p className="paragraph" style={{ width: "50%"}}>{text}</p>
-        <div style={{ paddingLeft: "50px", maxWidth: "50%" }}>
-            <ResourcesBox>
+        <p className="paragraph">{text}</p>
+        <div>
+            <ResourcesBoxMobile>
                 <h4 style={{ marginBottom: "5px" }}>
                     {title || 'Resources'}<i className="material-icons" style={{ fontSize: "20px" }}>lightbulb_outline</i>
                 </h4>
@@ -76,8 +83,7 @@ const Resources = ({ text, resources, title }) => {
                         </p>
                     ); 
                 })}
-            </ResourcesBox>
-        </div>
+            </ResourcesBoxMobile>
         </div>
     </div>
       </Fragment>
