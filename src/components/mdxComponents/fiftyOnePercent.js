@@ -42,10 +42,10 @@ const FiftyOnePercent = () => {
             )}
             <br />
             <div style={{ display: "flex", alignItems: "center" }}>
-                <div onClick={() => setStep(step - 1)} style={{ cursor: "pointer", paddingRight: "20px" }}>
+                <button onClick={() => setStep(step - 1)} style={{ cursor: "pointer", padding: "10px", height: "200px", visibility: step > 1 ? "initial" : "hidden" }}>
                     <p>Prev</p>
                     <p style={{ fontSize: "32px" }}>&#x21E6;</p>
-                </div>
+                </button>
                 {step === 1 && (
                     <img style={{ width: "80%" }} src={step1} />
                 )}
@@ -58,10 +58,10 @@ const FiftyOnePercent = () => {
                 {step === 4 && (
                     <img style={{ width: "80%" }} src={step4} />
                 )}
-                <div onClick={() => setStep(step + 1)} style={{ cursor: "pointer", paddingLeft: "20px" }}>
+                <button onClick={() => setStep(step + 1)} style={{ cursor: "pointer", padding: "10px", height: "200px", visibility: step < 4 ? "initial" : "hidden" }}>
                     <p>Next</p>
                     <p style={{ fontSize: "32px" }}>&#x21E8;</p>
-                </div>
+                </button>
             </div>
         </div>
     )

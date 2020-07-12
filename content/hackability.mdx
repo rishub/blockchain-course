@@ -40,9 +40,17 @@ Since they are publicly set on the blockchain, they cannot be altered after bein
 What this means, however, is that if there were any bugs, mistakes, or loopholes created in the smart contract at time of creation, this means
 they are free to be exploited. This means writing tests and ensuring the execution of the contract works as expected is crucial.
 
-But due to the nature of programming, there are bound to be bugs and exploits possible at some point. And when these loopholes come up, malicious actors can take advantage of them.
-This can allow for users to gain money they do not own, or even steal money with no record on the blockchain. Clearly, this is a problem and there can be counless bugs that allow hacks on the blockchain.
-Thus, it is crucial that smart contract developers are aware of these risks and are extra careful when deploying contracts.
+<Resources
+    title="Examples of Bad Smart Contract Code"
+    text="But due to the nature of programming, there are bound to be bugs and exploits possible at some point. And when these loopholes come up, malicious actors can take advantage of them.
+        This can allow for users to gain money they do not own, or even steal money with no record on the blockchain. Clearly, this is a problem and there can be counless bugs that allow hacks on the blockchain.
+        Thus, it is crucial that smart contract developers are aware of these risks and are extra careful when deploying contracts."
+    resources={[
+        { link: "https://hackingdistributed.com/2016/06/18/analysis-of-the-dao-exploit/", text: "DAO exploit" },
+        { link: "https://medium.com/@jamesgan/how-i-found-a-25m-vulnerability-in-blockchain-c2717d531dd8", text: "Bancor vulnerability" }
+    ]}
+/>
+
 
 ### Denial of service attacks
 
@@ -56,10 +64,17 @@ Due to the computational power and resources required to confirm transactions, t
 While this is not truly hacking, as the hacker as no way of stealing monetary value from others, it can still cause a lot of disruption to the systems and blockchain overall.
 
 
+### Selfish mining
+
+Selfish mining is an additional method of exploiting the blockchain that was first introduced 
+in <a href="https://www.cs.cornell.edu/~ie53/publications/btcProcFC.pdf">this 2013 paper</a> written by Cornell researchers Ittay Eyal and Emin G¨un Sirer.
+
+The overall idea is that bitcoin assumes that miners will create blocks on the public blockchain. Sirer and Eyal showed that it is possible for miners to hide new blocks
+and make them available only to their private networks. By hiding these blocks from the public blockchain in a separate fork, they can end up earning more and more bitcoin.
+
+While this is something to be aware of and could end up undermining bitcoin's decentralized nature (Frankfield 2019), there are defense mechanisms against selfish mining as we
+see in <a href="https://eprint.iacr.org/2014/007.pdf">this paper</a> written by a Boston University PHD Candidate.
+
 
 #### Resources for learning / topics that need to be covered
-- https://101blockchains.com/blockchain-hacked/
-
-#### References
-- https://101blockchains.com/blockchain-hacked/ Hasib Anwar November 17, 2019
-- https://en.wikipedia.org/wiki/Double-spending
+- Paper on Securify,  https://arxiv.org/abs/1806.01143
