@@ -39,10 +39,13 @@ const config = {
   sidebar: {
     forcedNavOrder: [
       '/introduction', // add trailing slash if enabled above
-      '/codeblock',
+      '/privacy',
+      '/oracles',
+      '/scalability',
+      '/hackability',
     ],
     collapsedNav: [
-      '/codeblock', // add trailing slash if enabled above
+      
     ],
     links: [],
     frontline: false,

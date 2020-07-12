@@ -289,7 +289,7 @@ export const baseStyles = injectGlobal`
   }
 
   .navBarBrand img {
-    width: 60px;
+    width: 180px;
     margin-right: 6px;
     display: inline-block;
   }
