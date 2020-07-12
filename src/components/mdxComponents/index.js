@@ -9,6 +9,7 @@ import LightningvsBitcoin from './lightning-vs-bitcoin';
 import EnigmaVisualization from './enigma-visualization';
 import BitcoinVsZcash from './bitcoin-vs-zcash';
 import OracleExamples from './oracle-examples';
+import FiftyOnePercent from './fiftyOnePercent';
 
 const StyledPre = styled('pre')`
   padding: 16px;
@@ -48,6 +49,7 @@ export default {
   EnigmaVisualization,
   BitcoinVsZcash,
   OracleExamples,
+  FiftyOnePercent,
   // TODO add `img`
   // TODO add `blockquote`
   // TODO add `ul`
