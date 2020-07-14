@@ -1,0 +1,51 @@
+---
+title: "Tradeoffs in Blockchain"
+metaTitle: "Tradeoffs in Blockchain"
+metaDescription: "Tradeoffs in Blockchain: this page covers vulnerabilities including 51% attacks, smart contract vulnerabilities, DDoS attacks, and selfish mining."
+---
+# Introduction
+Blockchain as a whole has many tradeoffs. These tradeoffs include, but are not limited to:
+
+1. Decentralization Tradeoffs
+1. Scalability Tradeoffs
+1. Security Tradeoffs
+1. Cost Tradeoffs
+1. Risk Tradeoffs
+1. Investment/Hype Tradeoffs
+1. Innvoation Tradeoffs
+
+These categories can overlap: decentralization and scalability go hand-in-hand, security and cost regularly interact with each other, and there are many tradeoffs between innovation, getting investment, and risk. In reality, these categories will almost always overlap - it is hard to imagine any of these factors not overlapping with cost or risk. In this section, we will look into some of these tradeoffs in greater detail.
+
+# Decentralization & Scalability Tradeoffs
+**Throughput vs Latency**: many of a blockchain’s benefits relate to having an immutable, trustless record of data. However, that record of data can only be trustless if you adhere to certain standards. For Bitcoin, those standards amount to the proof-of-work protocol and a blockchain that is open to the public. As throughput increases, you begin to limit the network’s ability to be open to the public, introducing new requirements to participation (being able to stay in sync with large, regular data updates that are primarily coming from the US or China - latency). By increasing latency, you begin to exclude smaller and more remote nodes from the network, thereby decreasing the trustless security guarantees that we could originally assume.
+
+**Public vs private**: This trade-off between throughput and latency is a sort of fundamental truth within blockchain, but that is not to say that there are not ways to ensure both. In a public blockchain, there has been an emphasis around using blockchain’s benefits in a very strong form - allow anyone to work with data, smart contracts, and cryptocurrency.
+
+On the other hand, private, or permissioned blockchains in particular tend to circumvent this issue by allowing many trusted actors to participate in the network, and typically trying to practice good regulatory compliance. This approach allows you to place requirements on the member nodes of your network, **which can significantly reduce decentralization, public usability, or trustless nature of the system**, but *can* introduce similar benefits within the network that you establish.
+
+For example, Ripple has one of the largest market caps, and has a permissioned network setup in which a few nodes run as “validator nodes”, which are more trusted and run the blockchain (add new blocks), while “stock servers” observe new blocks and help keep track of the blockchain. This allows them to ensure that the nodes which need to stay up-to-date with the blockchain can have certain requirements (namely bandwidth, geolocation, and being a trusted actor), enabling those nodes to process larger amounts of data (increase in throughput).
+
+# Security vs Cost: Risk
+The following categories heavily overlap with tradeoffs for risk. Computer security where Blockchain is involved is a costly, slow, and nacent process. Many vulnerabilities are impossible to know until someone loses a lot of money from them, and others are simply slow and difficult to fix even once detected
+
+// cite DAO
+
+# Security vs Cost: Smart Contract Gas
+More complex security authentication => more gas/etc cost for Blockchain virtual machines.
+
+# Security vs Cost: Blockchain Development
+Auditing is expensive. Limited automated tools exist. Who even knows how to audit?
+
+# Risk Tradeoffs: Compliance vs Innovation
+Bitcoin itself is a good example of this.
+
+# Risk Tradeoffs: Compliance vs Investment/Hype
+Exchanges
+Enterprise getting involved
+
+# Tradeoffs in Blockchain Involvement from Industry
+See Libra, member networks withdrawing.
+Versus Ripple...
+
+# Conclusion: There are MANY trade-offs in Blockchain
+<Resources title="Note from James" text="One key thing we want to emphasize here is that many things in blockchain are trade-offs. These trade-offs exist throughout the field, and they are also one of the best ways to assess and evaluate new blockchain projects that you may discover. Bitcoin, Ethereum, and any other system that you have read the whitepaper for and have a strong understanding of are generally good reference points to use for those comparisons." resources={[ {text:"Whenever I read a new white-paper or listen to a new blockchain idea, I try to evaluate what technical, theoretical, and trust trade-offs are being made to enable whatever benefits are claimed."} ]} />
