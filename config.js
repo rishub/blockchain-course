@@ -38,6 +38,7 @@ const config = {
   },
   sidebar: {
     forcedNavOrder: [
+      '',
       '/introduction', // add trailing slash if enabled above
       '/scalability',
       '/privacy',
@@ -51,7 +52,7 @@ const config = {
     ],
     links: [],
     frontline: false,
-    ignoreIndex: true,
+    ignoreIndex: false,
     title: "Blockchain",
   },
   siteMetadata: {
