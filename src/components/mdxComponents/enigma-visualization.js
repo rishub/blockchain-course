@@ -7,7 +7,7 @@ import './enigma-visualization.css';
 
 const lightningLogo = require('../images/lightning.png')
 const bitcoinLogo = require('../images/bitcoin.png')
-
+const publicBlockchain = require('../images/public_blockchain.png')
 
 const Box = styled('div')`
     padding: 10px;
@@ -42,9 +42,11 @@ const EnigmaVisualization = () => {
                     <div>{visual === "Enigma" && <span>&#8594;</span>}<a onClick={() => setVisual("Enigma")} style={{ cursor: "pointer", marginBottom: "5px" }}>Enigma</a></div>
                 </div>
                 <div style={{ display: "flex" }} className={visual === "Public blockchain" ? "visible" : "hidden"}>
-                    {visual === "Public blockchain" && <Fragment><WhiteBox />
+                    {visual === "Public blockchain" && <Fragment>
                     <Box>Blockchain</Box>
-                    <div style={{ alignSelf: "center", fontSize: "36px", width: "50px", textAlign: "center" }}>&#8594;</div>
+                    <div style={{ alignSelf: "center", width: "100px", textAlign: "center" }}>Blockchain consists of a network of public data<br/><span style={{ fontSize: "36px" }}>&rarr;</span></div>
+                    <img src={publicBlockchain} style={{ width: "150px", height: "150px", alignSelf: "center", marginRight: "10px", marginLeft: "10px" }} />
+                    <div style={{ alignSelf: "center", width: "100px", textAlign: "center" }}>A User can easily access this public data with full transparency<br/><span style={{ fontSize: "36px" }}>&rarr;</span></div>
                     <Box>User</Box></Fragment>}
                 </div>
                 <div className={visual === "Enigma" ? "visible" : "hidden"}>
