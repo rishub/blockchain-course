@@ -373,7 +373,7 @@ export const baseStyles = injectGlobal`
   /* Header section ends here */
   .sidebarTitle {
     /* box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16); */
-    background-color: #f8f8f8;
+    background-color: #eee;
     padding: 18px 16px;
     font-family: 'Poppins';
     font-size: 18px;
