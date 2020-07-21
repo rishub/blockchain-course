@@ -784,6 +784,7 @@ export const baseStyles = injectGlobal`
     }
     .topnav.responsive .visibleMobile {
       display: block;
+      background: white;
     }
     .topnav .navBarUL {
       display: none;
